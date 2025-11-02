@@ -1,4 +1,0 @@
-repository "VRAlchemy 2025-10-21_13-08-14/VRAlchemy@10171123030755@cloud"
-  path "/"
-    br "/main"
-    co "/main"

@@ -64,36 +64,60 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CauldronHeat.cs" />
-    <Compile Include="Assets\Scripts\CauldronPotion.cs" />
-    <Compile Include="Assets\Scripts\TableInteraction.cs" />
-    <Compile Include="Assets\Scripts\GrabGlow.cs" />
-    <Compile Include="Assets\Scripts\CauldronBrew.cs" />
-    <Compile Include="Assets\Scripts\TableRuneAnimation.cs" />
-    <Compile Include="Assets\Scripts\FlaskTrail.cs" />
-    <Compile Include="Assets\Scripts\TableParticles.cs" />
-    <Compile Include="Assets\Scripts\LiquidFollow.cs" />
-    <Compile Include="Assets\Scripts\MagicTableGlow.cs" />
-    <Compile Include="Assets\Scripts\FlaskSound.cs" />
-    <Compile Include="Assets\Scripts\CauldronOpenDoorOnStart.cs" />
-    <Compile Include="Assets\Scripts\AlchemyCauldron.cs" />
-    <Compile Include="Assets\Scripts\FlaskGlow.cs" />
-    <Compile Include="Assets\Scripts\CauldronCylinder.cs" />
-    <Compile Include="Assets\Scripts\SpinningChair.cs" />
-    <Compile Include="Assets\Scripts\AutoDestroyFlask.cs" />
-    <Compile Include="Assets\Scripts\DoorOpenOnStart.cs" />
-    <Compile Include="Assets\Scripts\MagicBook.cs" />
-    <Compile Include="Assets\Scripts\CauldronGlow.cs" />
-    <Compile Include="Assets\Scripts\Cauldron.cs" />
-    <Compile Include="Assets\Scripts\SpiritLampController.cs" />
-    <Compile Include="Assets\Scripts\TableSound.cs" />
-    <Compile Include="Assets\Scripts\RocketFlask.cs" />
-    <Compile Include="Assets\Scripts\CauldronExplosion.cs" />
-    <Compile Include="Assets\Scripts\CauldronInteraction.cs" />
-    <Compile Include="Assets\Scripts\PourOnTilt.cs" />
-    <Compile Include="Assets\Scripts\FaucetController.cs" />
-    <Compile Include="Assets\Scripts\FlyingCauldron.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\AnalogInput.cs" />
+    <Compile Include="Assets\Scripts\IngredientData.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\WeaponHolster.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\TextChanger.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\LockPosition.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\MoverAnalog.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\Zoomer.cs" />
+    <Compile Include="Assets\KINERACTIVE\_Config\Anims\PlayerAnims.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\CoordinateSender.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\ButtonInput.cs" />
+    <Compile Include="Assets\Scripts\SimpleCauldron.cs" />
+    <Compile Include="Assets\Scripts\MixingBowl.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\ButtonTouchable.cs" />
+    <Compile Include="Assets\KINERACTIVE\_Config\Inputs\PlayerInputs.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Input Handlers\InputHandlerResting.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\Repositioner.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\Mover.cs" />
+    <Compile Include="Assets\Scripts\LiquidContainer.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\EnableOnStart.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\ItemGrabber.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\KeycodeInput.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\Shortcut.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Prerequisite\KineractiveManager.cs" />
     <Compile Include="Assets\Samples\OculusVRHands\Scripts\HandAnim.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Input Handlers\InputHandler.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\LockRotation.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Base\Touchable.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Helpers\MathfExtended.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\Counter.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Base\KineractiveInput.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Prerequisite\IKControl.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\SelfActivatedInput.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\RotatorAnalog.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\RotationSway.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\MouseLookSeated.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\Player_Movement.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\Player_Gravity.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\InstructionChanger.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Entities\Ent_AudioClipPlayer.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\AxisInput.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\RotationSwapper.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\RotationVertical.cs" />
+    <Compile Include="Assets\Scripts\Ingredient.cs" />
+    <Compile Include="Assets\Scripts\VRClearButton.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\PositionSway.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Entities\Ent_Light.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Utility\PositionSwapper.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Base\Singleton.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Helpers\InputExtended.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\CursorLock.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\Gun.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Helpers\UnityEventExtended.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\Rotator.cs" />
+    <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\RotationHorizontal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -964,6 +988,14 @@
       <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.XR.Hands">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Hands.dll</HintPath>
       <Private>False</Private>
@@ -980,8 +1012,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
@@ -1012,6 +1052,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1026,6 +1070,10 @@
     </Reference>
     <Reference Include="Unity.Settings.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Settings.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+      <HintPath>Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.XR.CoreUtils.Editor">
@@ -1056,12 +1104,28 @@
       <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.ProBuilder">
@@ -1074,6 +1138,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
@@ -1112,8 +1180,16 @@
       <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.2D.Internal">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Internal.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Timeline">
@@ -1156,8 +1232,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
@@ -1171,7 +1255,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
-    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
   </ItemGroup>
