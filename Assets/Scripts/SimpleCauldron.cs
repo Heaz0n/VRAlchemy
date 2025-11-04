@@ -2,6 +2,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class SimpleCauldron : MonoBehaviour
 {
@@ -12,12 +13,17 @@ public class SimpleCauldron : MonoBehaviour
         public string ingredient2;
         public GameObject resultPotion;
         public string potionName;
+        public Color potionColor;
+        public string description;
     }
 
-    [Header("Основные настройки")]
+    [Header("Рецепты зелий")]
     public List<PotionRecipe> recipes = new List<PotionRecipe>();
+    
+    [Header("Настройки котла")]
     public Transform spawnPoint;
     public float brewTime = 2f;
+    public float spawnHeight = 1.5f;
 
     [Header("Эффекты")]
     public ParticleSystem brewEffect;
@@ -27,6 +33,7 @@ public class SimpleCauldron : MonoBehaviour
     public TextMeshProUGUI mainDisplay;
     public TextMeshProUGUI ingredientsDisplay;
     public TextMeshProUGUI timerDisplay;
+    public TextMeshProUGUI hintDisplay;
 
     [Header("Кнопка очистки")]
     public GameObject clearButton;
@@ -42,10 +49,12 @@ public class SimpleCauldron : MonoBehaviour
     private AudioSource audioSource;
     private List<string> currentIngredients = new List<string>();
     private bool isWorking = false;
-    private bool hasFinishedBrewing = false; // Защита от повторного вызова
+    private bool hasFinishedBrewing = false;
     private float currentTimer = 0f;
     private int successCount = 0;
     private int totalAttempts = 0;
+    private bool isSpawningPotion = false;
+    private HashSet<GameObject> processedIngredients = new HashSet<GameObject>();
 
     void Start()
     {
@@ -53,10 +62,17 @@ public class SimpleCauldron : MonoBehaviour
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
 
+        if (spawnPoint == null)
+        {
+            // Создаем точку спавна над котлом, но не меняем environment
+            GameObject spawnObj = new GameObject("SpawnPoint");
+            spawnPoint = spawnObj.transform;
+            spawnPoint.position = transform.position + Vector3.up * spawnHeight;
+            spawnPoint.SetParent(transform);
+        }
+
         UpdateClearButton();
-        Debug.Log("Котел инициализирован");
-        ShowMessage("Добро пожаловать в лабораторию!\nБросьте 2 ингредиента в котел");
-        UpdateIngredientsUI();
+        ShowWelcomeMessage();
     }
 
     void Update()
@@ -75,35 +91,48 @@ public class SimpleCauldron : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (isWorking) 
+        if (isWorking || isSpawningPotion) 
         {
-            Debug.Log("Котел занят, игнорируем ингредиент");
+            ShowHint("Котел занят! Дождитесь окончания варки.");
             return;
         }
 
+        if (processedIngredients.Contains(other.gameObject))
+        {
+            return;
+        }
+
+        // Работаем только с объектами, у которых есть компонент Ingredient
         Ingredient item = other.GetComponent<Ingredient>();
         if (item != null && currentIngredients.Count < 2)
         {
-            Debug.Log($"Обнаружен ингредиент: {item.ingredientName}");
-            ProcessIngredient(item);
+            ProcessIngredient(item, other.gameObject);
+        }
+        else if (currentIngredients.Count >= 2)
+        {
+            ShowHint("Котел полон! Начните варку или очистите котел.");
         }
     }
 
-    void ProcessIngredient(Ingredient ingredient)
+    void ProcessIngredient(Ingredient ingredient, GameObject ingredientObject)
     {
+        processedIngredients.Add(ingredientObject);
         currentIngredients.Add(ingredient.ingredientName);
-        Debug.Log($"Добавлен ингредиент: {ingredient.ingredientName}. Всего: {currentIngredients.Count}");
 
         PlaySound(addSound);
-        Destroy(ingredient.gameObject);
+        Destroy(ingredientObject);
 
         UpdateIngredientsUI();
         UpdateClearButton();
-        ShowMessage($"Добавлен: {ingredient.ingredientName}\nОсталось: {2 - currentIngredients.Count}");
+        
+        string message = $"Добавлен: {ingredient.ingredientName}\n";
+        message += currentIngredients.Count == 1 ? "Нужен еще один ингредиент" : "Готово к варке!";
+        ShowMessage(message);
+
+        ShowHint($"Ингредиентов: {currentIngredients.Count}/2\nДобавьте еще один предмет");
 
         if (currentIngredients.Count >= 2)
         {
-            Debug.Log("Достаточно ингредиентов, начинаем варку");
             StartBrewing();
         }
     }
@@ -111,13 +140,16 @@ public class SimpleCauldron : MonoBehaviour
     void StartBrewing()
     {
         isWorking = true;
-        hasFinishedBrewing = false; // Сбрасываем флаг завершения
+        hasFinishedBrewing = false;
+        isSpawningPotion = false;
         currentTimer = brewTime;
         totalAttempts++;
 
         UpdateClearButton();
 
-        Debug.Log($"Начало варки. Ингредиенты: {currentIngredients[0]} + {currentIngredients[1]}");
+        string combo = $"{currentIngredients[0]} + {currentIngredients[1]}";
+        ShowMessage($"Варка началась!\nКомбинация: {combo}");
+        ShowHint("Идет процесс варки... Ждите результата!");
 
         if (brewEffect != null)
             brewEffect.Play();
@@ -129,62 +161,44 @@ public class SimpleCauldron : MonoBehaviour
         }
 
         PlaySound(brewSound);
-        ShowMessage("Начинаем варку зелья...\nЖдите результат!");
     }
 
     void FinishBrewing()
     {
-        // Защита от повторного вызова
-        if (hasFinishedBrewing)
-        {
-            Debug.Log("Варка уже завершена, игнорируем повторный вызов");
-            return;
-        }
+        if (hasFinishedBrewing || isSpawningPotion) return;
 
         hasFinishedBrewing = true;
         isWorking = false;
-        
-        Debug.Log("Завершение варки...");
+        isSpawningPotion = true;
 
-        // Ищем подходящий рецепт
         PotionRecipe foundRecipe = FindRecipe();
 
         if (foundRecipe != null)
         {
-            Debug.Log($"Найден рецепт: {foundRecipe.potionName}");
             CreateSuccessPotion(foundRecipe);
         }
         else
         {
-            Debug.Log("Рецепт не найден, создаем провальное зелье");
             CreateFailedPotion();
         }
 
-        // Очищаем котел и обновляем кнопку
         currentIngredients.Clear();
+        processedIngredients.Clear();
         UpdateIngredientsUI();
         UpdateClearButton();
     }
 
     PotionRecipe FindRecipe()
     {
-        if (currentIngredients.Count != 2) 
-        {
-            Debug.Log("Не хватает ингредиентов для поиска рецепта");
-            return null;
-        }
+        if (currentIngredients.Count != 2) return null;
 
         string item1 = currentIngredients[0];
         string item2 = currentIngredients[1];
-
-        Debug.Log($"Поиск рецепта для: {item1} + {item2}");
 
         foreach (PotionRecipe recipe in recipes)
         {
             bool match = (recipe.ingredient1 == item1 && recipe.ingredient2 == item2) ||
                         (recipe.ingredient1 == item2 && recipe.ingredient2 == item1);
-            
-            Debug.Log($"Проверка рецепта: {recipe.ingredient1} + {recipe.ingredient2} = {match}");
 
             if (match)
             {
@@ -192,132 +206,153 @@ public class SimpleCauldron : MonoBehaviour
             }
         }
 
-        Debug.Log("Подходящий рецепт не найден");
         return null;
     }
 
     void CreateSuccessPotion(PotionRecipe recipe)
     {
         successCount++;
-        Debug.Log($"Создание успешного зелья: {recipe.potionName}");
 
-        // Создаем зелье
         if (recipe.resultPotion != null && spawnPoint != null)
         {
             GameObject newPotion = Instantiate(recipe.resultPotion, spawnPoint.position, Quaternion.identity);
-            Debug.Log($"Зелье создано: {newPotion.name}");
             
-            // Добавляем защиту от повторного использования префаба
-            StartCoroutine(PreventDuplicateSpawn(newPotion));
-        }
-        else
-        {
-            Debug.LogError("Ошибка: префаб зелья или точка появления не назначены!");
+            // Добавляем физику если нет
+            Rigidbody rb = newPotion.GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                rb = newPotion.AddComponent<Rigidbody>();
+                rb.mass = 0.5f;
+                rb.drag = 0.5f;
+            }
+
+            // Добавляем возможность брать в VR если нет
+            XRGrabInteractable grab = newPotion.GetComponent<XRGrabInteractable>();
+            if (grab == null)
+            {
+                grab = newPotion.AddComponent<XRGrabInteractable>();
+            }
+
+            StartCoroutine(PreventDuplicateInteractions(newPotion));
         }
 
         // Эффекты успеха
         if (brewEffect != null)
         {
             var main = brewEffect.main;
-            main.startColor = Color.green;
+            main.startColor = recipe.potionColor;
             brewEffect.Play();
         }
 
         if (cauldronLight != null)
         {
-            cauldronLight.color = Color.green;
+            cauldronLight.color = recipe.potionColor;
         }
 
         PlaySound(successSound);
-        ShowMessage($"Успех! Создано: {recipe.potionName}\nУдачных зелий: {successCount}/{totalAttempts}");
+        
+        string successMessage = $"УСПЕХ!\n";
+        successMessage += $"Создано: {recipe.potionName}\n";
+        successMessage += $"{recipe.description}\n";
+        successMessage += $"Удачных зелий: {successCount}/{totalAttempts}";
+        
+        ShowMessage(successMessage);
+        ShowHint("Отличная работа! Зелье готово.");
 
-        Invoke("ResetCauldron", 3f);
+        StartCoroutine(ResetCauldronAfterDelay(3f));
     }
 
     void CreateFailedPotion()
     {
-        Debug.Log("Создание провального зелья");
+        if (spawnPoint != null)
+        {
+            GameObject failedItem = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            failedItem.transform.position = spawnPoint.position;
+            failedItem.transform.localScale = Vector3.one * 0.1f;
+            
+            Renderer rend = failedItem.GetComponent<Renderer>();
+            rend.material.color = Color.gray;
 
-        // Создаем провальный объект
-        GameObject failedItem = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        failedItem.transform.position = spawnPoint.position;
-        failedItem.transform.localScale = Vector3.one * 0.2f;
-        
-        Renderer rend = failedItem.GetComponent<Renderer>();
-        rend.material.color = new Color(0.3f, 0.3f, 0.3f);
+            Rigidbody rb = failedItem.AddComponent<Rigidbody>();
+            failedItem.name = "Неудачное зелье";
 
-        Rigidbody rb = failedItem.AddComponent<Rigidbody>();
-        failedItem.name = "Неудачное зелье";
+            StartCoroutine(PreventDuplicateInteractions(failedItem));
+        }
 
-        Debug.Log($"Провальное зелье создано: {failedItem.name}");
-
-        // Эффекты провала
         if (brewEffect != null)
         {
             var main = brewEffect.main;
-            main.startColor = Color.red;
+            main.startColor = Color.gray;
             brewEffect.Play();
         }
 
         if (cauldronLight != null)
         {
-            cauldronLight.color = Color.red;
+            cauldronLight.color = Color.gray;
         }
 
         PlaySound(failSound);
-        ShowMessage($"Провал! Неизвестная комбинация\nУдачных зелий: {successCount}/{totalAttempts}");
+        
+        string failMessage = $"НЕУДАЧА\n";
+        failMessage += $"Неизвестная комбинация:\n";
+        failMessage += $"{currentIngredients[0]} + {currentIngredients[1]}\n";
+        failMessage += $"Удачных зелий: {successCount}/{totalAttempts}";
+        
+        ShowMessage(failMessage);
+        ShowHint("Эта комбинация не работает. Попробуйте другие предметы!");
 
-        Invoke("ResetCauldron", 3f);
+        StartCoroutine(ResetCauldronAfterDelay(3f));
     }
 
-    // Защита от дублирования спавна
-    private System.Collections.IEnumerator PreventDuplicateSpawn(GameObject spawnedObject)
+    private IEnumerator PreventDuplicateInteractions(GameObject spawnedObject)
     {
-        // Временно отключаем коллайдер чтобы предотвратить повторное срабатывание
-        Collider collider = spawnedObject.GetComponent<Collider>();
-        if (collider != null)
-        {
+        Collider[] colliders = spawnedObject.GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders) 
             collider.enabled = false;
-            yield return new WaitForSeconds(0.5f);
+
+        XRGrabInteractable grabInteractable = spawnedObject.GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null) 
+            grabInteractable.enabled = false;
+
+        yield return new WaitForSeconds(1.0f);
+
+        foreach (Collider collider in colliders) 
             collider.enabled = true;
-        }
+        if (grabInteractable != null) 
+            grabInteractable.enabled = true;
+
+        isSpawningPotion = false;
     }
 
-    // === МЕТОД ДЛЯ ОЧИСТКИ КОТЛА ===
     public void ClearCauldron()
     {
-        Debug.Log("Вызов метода ClearCauldron");
-        
-        if (isWorking)
+        if (isWorking || isSpawningPotion)
         {
-            Debug.Log("Нельзя очистить котел во время варки!");
-            ShowMessage("Нельзя очистить во время варки!\nДождитесь окончания");
+            ShowHint("Нельзя очистить во время варки!");
             return;
         }
 
         if (currentIngredients.Count > 0)
         {
-            Debug.Log($"Очистка котла. Удалено ингредиентов: {currentIngredients.Count}");
-            
             PlaySound(clearSound);
             currentIngredients.Clear();
+            processedIngredients.Clear();
             UpdateIngredientsUI();
             UpdateClearButton();
-            ShowMessage("Котел очищен!\nМожно начинать заново");
             
+            ShowMessage("Котел очищен!\nМожно начинать новый эксперимент");
+            ShowHint("Котел пуст. Добавьте два ингредиента для варки.");
+
             if (brewEffect != null)
             {
                 var main = brewEffect.main;
                 main.startColor = Color.blue;
                 brewEffect.Play();
             }
-
-            Debug.Log("Котел успешно очищен");
         }
         else
         {
-            Debug.Log("Котел уже пуст");
-            ShowMessage("Котел уже пуст!\nДобавьте ингредиенты");
+            ShowHint("Котел уже пуст! Добавьте ингредиенты для варки.");
         }
     }
 
@@ -325,25 +360,23 @@ public class SimpleCauldron : MonoBehaviour
     {
         if (clearButton != null)
         {
-            bool shouldShow = currentIngredients.Count > 0 && !isWorking;
+            bool shouldShow = currentIngredients.Count > 0 && !isWorking && !isSpawningPotion;
             clearButton.SetActive(shouldShow);
-
-            Renderer buttonRenderer = clearButton.GetComponent<Renderer>();
-            if (buttonRenderer != null)
-            {
-                if (isWorking)
-                    buttonRenderer.material.color = Color.gray;
-                else if (currentIngredients.Count > 0)
-                    buttonRenderer.material.color = Color.red;
-                else
-                    buttonRenderer.material.color = Color.white;
-            }
         }
+    }
+
+    private IEnumerator ResetCauldronAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ResetCauldron();
     }
 
     void ResetCauldron()
     {
-        Debug.Log("Сброс котла");
+        isWorking = false;
+        hasFinishedBrewing = false;
+        isSpawningPotion = false;
+        processedIngredients.Clear();
 
         if (cauldronLight != null)
         {
@@ -355,8 +388,18 @@ public class SimpleCauldron : MonoBehaviour
             brewEffect.Stop();
 
         UpdateClearButton();
-        ShowMessage("Котел готов!\nБросьте 2 новых ингредиента");
-        UpdateIngredientsUI();
+        ShowMessage("Котел готов к работе!\nБросьте 2 ингредиента для варки");
+        ShowHint("Используйте разные комбинации ингредиентов");
+    }
+
+    void ShowWelcomeMessage()
+    {
+        string welcomeMsg = "Алхимическая лаборатория\n\n";
+        welcomeMsg += "Бросьте два ингредиента в котел\n";
+        welcomeMsg += "для создания зелий";
+        
+        ShowMessage(welcomeMsg);
+        ShowHint("Бросьте 2 ингредиента в котел чтобы начать");
     }
 
     void ShowMessage(string text)
@@ -364,7 +407,14 @@ public class SimpleCauldron : MonoBehaviour
         if (mainDisplay != null)
         {
             mainDisplay.text = text;
-            Debug.Log($"UI сообщение: {text}");
+        }
+    }
+
+    void ShowHint(string text)
+    {
+        if (hintDisplay != null)
+        {
+            hintDisplay.text = text;
         }
     }
 
@@ -383,7 +433,6 @@ public class SimpleCauldron : MonoBehaviour
                 {
                     text += $"• {ingredient}\n";
                 }
-                text += $"\n<color=red>Нажмите кнопку для очистки</color>";
                 ingredientsDisplay.text = text;
             }
         }
@@ -402,16 +451,6 @@ public class SimpleCauldron : MonoBehaviour
         if (clip != null && audioSource != null)
         {
             audioSource.PlayOneShot(clip);
-            Debug.Log($"Воспроизведен звук: {clip.name}");
-        }
-    }
-
-    void OnDrawGizmos()
-    {
-        if (spawnPoint != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(spawnPoint.position, 0.1f);
         }
     }
 }

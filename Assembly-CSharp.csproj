@@ -69,6 +69,7 @@
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\WeaponHolster.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\TextChanger.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\LockPosition.cs" />
+    <Compile Include="Assets\Scripts\QuestSystem.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\MoverAnalog.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\Zoomer.cs" />
     <Compile Include="Assets\KINERACTIVE\_Config\Anims\PlayerAnims.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\ButtonTouchable.cs" />
     <Compile Include="Assets\KINERACTIVE\_Config\Inputs\PlayerInputs.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Input Handlers\InputHandlerResting.cs" />
+    <Compile Include="Assets\BK_AlchemistHouse\Scripts\VolumetricLightRenderer.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\Repositioner.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\Mover.cs" />
     <Compile Include="Assets\Scripts\LiquidContainer.cs" />
@@ -104,11 +106,13 @@
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\InstructionChanger.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Entities\Ent_AudioClipPlayer.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\AxisInput.cs" />
+    <Compile Include="Assets\BK_AlchemistHouse\Scripts\VolumetricLight.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\RotationSwapper.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\RotationVertical.cs" />
     <Compile Include="Assets\Scripts\Ingredient.cs" />
     <Compile Include="Assets\Scripts\VRClearButton.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\PositionSway.cs" />
+    <Compile Include="Assets\BK_AlchemistHouse\Scripts\FreeCamera.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Entities\Ent_Light.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\PositionSwapper.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Base\Singleton.cs" />
@@ -122,13 +126,16 @@
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\BK_AlchemistHouse\Resources\Shaders\VolumetricLight.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\BK_AlchemistHouse\Resources\Shaders\BlitAdd.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\3D Laboratory Environment with Appratus\Documentation\3D Laboratory environment with appratus.txt" />
     <None Include="Assets\Samples\OculusVRHands\Shaders\Hands_01.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\BK_AlchemistHouse\Resources\Shaders\Refraction.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
@@ -137,6 +144,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\BK_AlchemistHouse\Resources\Shaders\BilateralBlur.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
