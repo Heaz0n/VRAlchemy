@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638976161686564236
-    m_Hash: 2576158829
+      ticks: 638978821955402316
+    m_Hash: 1588805638
   m_LockFileStatus:
     m_FilePath: C:/Users/Aleksandr/Documents/VRAlchemy/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638976161686640318
-    m_Hash: 4103311014
+      ticks: 638978821955402316
+    m_Hash: 2245500941
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

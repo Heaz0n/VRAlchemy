@@ -28,7 +28,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2022_3_62;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2022_3_62;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;OBI_ONI_SUPPORTED;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
@@ -64,25 +64,49 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColorFromPhase.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\AnalogInput.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\LookAroundCamera.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColliderHighlighter.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\SlowmoToggler.cs" />
     <Compile Include="Assets\Scripts\IngredientData.cs" />
+    <Compile Include="Assets\Scripts\RecipeManager.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\WeaponHolster.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObjectLimit.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObiParticleCounter.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\TextChanger.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\DebugParticleFrames.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\LockPosition.cs" />
     <Compile Include="Assets\Scripts\QuestSystem.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\MoverAnalog.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\Zoomer.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\WorldSpaceGravity.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\MazeManager.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\Blinker.cs" />
     <Compile Include="Assets\KINERACTIVE\_Config\Anims\PlayerAnims.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColorRandomizer.cs" />
+    <Compile Include="Assets\Scripts\InteractableObject.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObiActorTeleport.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\AddRandomVelocity.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\CoordinateSender.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\ButtonInput.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\FPSDisplay.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\SolidifyOnContact.cs" />
     <Compile Include="Assets\Scripts\SimpleCauldron.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ActorSpawner.cs" />
+    <Compile Include="Assets\Scripts\MagicGrinder.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ExtrapolationCamera.cs" />
     <Compile Include="Assets\Scripts\MixingBowl.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ObjectDragger.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\ButtonTouchable.cs" />
     <Compile Include="Assets\KINERACTIVE\_Config\Inputs\PlayerInputs.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Input Handlers\InputHandlerResting.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\EmitOnKeyPress.cs" />
     <Compile Include="Assets\BK_AlchemistHouse\Scripts\VolumetricLightRenderer.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\Repositioner.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\WaveGenerator.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\Mover.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\OverlapTest.cs" />
     <Compile Include="Assets\Scripts\LiquidContainer.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\EnableOnStart.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\ItemGrabber.cs" />
@@ -95,12 +119,19 @@
     <Compile Include="Assets\KINERACTIVE\Scripts\Base\Touchable.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Helpers\MathfExtended.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\Counter.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\CharacterController\ObiCharacter.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\ViscositySurfTensionToUserData.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Base\KineractiveInput.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Prerequisite\IKControl.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Inputs\SelfActivatedInput.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\RotatorAnalog.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\RotationSway.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\MouseLookSeated.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColorFromVelocity.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ActorCOMTransform.cs" />
+    <Compile Include="Assets\Scripts\PotionItem.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\ObiFluidPropertyColorizer.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\CollisionEventHandler.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\Player_Movement.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\Player_Gravity.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\InstructionChanger.cs" />
@@ -110,50 +141,83 @@
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\RotationSwapper.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\RotationVertical.cs" />
     <Compile Include="Assets\Scripts\Ingredient.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\FluidJetController.cs" />
     <Compile Include="Assets\Scripts\VRClearButton.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\PositionSway.cs" />
     <Compile Include="Assets\BK_AlchemistHouse\Scripts\FreeCamera.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Entities\Ent_Light.cs" />
+    <Compile Include="Assets\Scripts\Cauldron.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Utility\PositionSwapper.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Base\Singleton.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Helpers\InputExtended.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\CursorLock.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\FluidColorizer.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\Gun.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\CharacterController\SampleCharacterController.cs" />
+    <Compile Include="Assets\Scripts\PotionEffect.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\MazeScoreFormatter.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\Melt.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\MoveAndRotate.cs" />
+    <Compile Include="Assets\Obi\Samples\Common\SampleResources\Scripts\ColorFromViscosity.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Helpers\UnityEventExtended.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Touchables\Rotator.cs" />
+    <Compile Include="Assets\Obi\Samples\Fluid\SampleResources\Scripts\BucketController.cs" />
     <Compile Include="Assets\KINERACTIVE\Scripts\Controls\FPS\RotationHorizontal.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Obi\Samples\Fluid\SampleResources\Materials\StandardPerInstanceColor.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\ParticleShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\FluidThickness.shader" />
     <None Include="Assets\BK_AlchemistHouse\Resources\Shaders\VolumetricLight.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\URP\FluidShaderURP.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\URP\ObiLightingURP.cginc" />
+    <None Include="Assets\Obi\Plugins\x86_64\libOni.dll" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\ObiLightingBuiltIn.cginc" />
     <None Include="Assets\BK_AlchemistHouse\Resources\Shaders\BlitAdd.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\DistanceFieldSlice.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\ObiParticles.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\StandardVertexColors.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\SimpleParticleShader.shader" />
     <None Include="Assets\3D Laboratory Environment with Appratus\Documentation\3D Laboratory environment with appratus.txt" />
     <None Include="Assets\Samples\OculusVRHands\Shaders\Hands_01.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\ObiEllipsoids.cginc" />
     <None Include="Assets\BK_AlchemistHouse\Resources\Shaders\Refraction.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\URP\ParticleShaderURP.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\URP\SimpleParticleShaderURP.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Obi\CHANGELOG_fluid.txt" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\NormalReconstruction.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\ScreenSpaceCurvatureFlow.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\BK_AlchemistHouse\Resources\Shaders\BilateralBlur.shader" />
+    <None Include="Assets\Obi\Plugins\x86\libOni.dll" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\FluidColorsBlend.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\ObiFluids.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\FluidShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Samples\OculusVRHands\Materials\Hands_Transparent.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\ObiUtils.cginc" />
     <None Include="Assets\Samples\OculusVRHands\Shaders\Hands_02.shader" />
     <None Include="Assets\Samples\OculusVRHands\Materials\Hands_DiffBump.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Obi\Resources\ObiMaterials\URP\ObiFluidsURP.cginc" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1264,7 +1328,9 @@
   <ItemGroup>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj" />
+    <ProjectReference Include="Obi.Editor.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
+    <ProjectReference Include="Obi.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>
